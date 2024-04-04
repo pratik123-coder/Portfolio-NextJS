@@ -20,6 +20,10 @@ const Navbar = () => {
             <MenuItem setActive={setActive} active={active} item="About">
             </MenuItem>
         </Link>
+        <Link href={"#skills"}>
+            <MenuItem setActive={setActive} active={active} item="Skills">
+            </MenuItem>
+        </Link> 
         <Link href={"#projects"}>
             <MenuItem setActive={setActive} active={active} item="Projects">
             </MenuItem>
