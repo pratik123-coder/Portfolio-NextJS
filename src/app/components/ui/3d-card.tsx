@@ -1,4 +1,5 @@
-import { cn } from "@/utils/cn";
+"use client"
+import { cn } from "../../../../utils/cn";
 import Image from "next/image";
 import React, {
   createContext,
