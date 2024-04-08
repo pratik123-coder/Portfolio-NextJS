@@ -1,7 +1,6 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
-import Image from "next/image";
 import SkillBox from "./SkillBox";
 
 
@@ -11,7 +10,7 @@ const SkillSection = () => {
 
   return (
     <section id="skills">
-      <h1 className="md:text-5xl text-3xl lg:text-7xl pt-12 pb-8 font-bold text-center font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 relative z-20">
+      <h1 className="md:text-5xl text-3xl lg:text-7xl pt-12 pb-8 text-center font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 relative z-20">
         My Skills
       </h1>
       <div className="flex flex-wrap items-center justify-center gap-2 ">
