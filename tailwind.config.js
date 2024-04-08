@@ -11,6 +11,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        // Update the old color names to the new ones
+        lightBlue: "sky",
+        warmGray: "stone",
+        trueGray: "neutral",
+        coolGray: "gray",
+        blueGray: "slate",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
