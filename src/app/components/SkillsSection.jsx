@@ -198,6 +198,11 @@ const SkillSection = () => {
                 textColor="text-white"
                 logo="/images/skills/supabase.svg"
                 name="SupaBase" />
+              <SkillBox
+                  backgroundColor="bg-red-500"
+                  textColor="white"
+                  logo="/images/skills/redis.png"
+                  name="Redis" />
 
             </CardItem>
 
@@ -237,6 +242,7 @@ const SkillSection = () => {
                 textColor="text-white"
                 logo="/images/skills/adobelr.png"
                 name="Lightroom" />
+
               <SkillBox
                 backgroundColor="bg-purple-700"
                 textColor="text-white"
@@ -275,6 +281,11 @@ const SkillSection = () => {
                 textColor="text-white"
                 logo="/images/skills/vercel.svg"
                 name="Vercel" />
+                <SkillBox
+                backgroundColor="bg-white"
+                textColor="black"
+                logo="/images/skills/render.jpeg"
+                name="Render" />
               <SkillBox
                 backgroundColor="bg-[#F79C28]"
                 textColor="text-white"
