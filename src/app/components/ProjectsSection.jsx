@@ -10,42 +10,42 @@ const projectsData = [
   {
     title: "Secure Chat App",
     href: "https://secure-chat-app-1uls.onrender.com/",
-    tag: ["All", "Web"],
+    tag: ["All", "College"],
     description: "This is a secure chat app using Socket.io And MERN Stack.",
     imageSrc: "/images/projects/chat-project.png", 
   },
   {
     title: "Spotify Clone",
     href: "https://spotifyclone-pratik.vercel.app/",
-    tag: ["All", "Web"],
+    tag: ["All", "Personal"],
     description: "Spotify Clone created using NextJS, PostgreSQL and Supabase Database.",
     imageSrc: "/images/projects/spotify-project.png",
   },
   {
     title: "CommuneSphere",
     href: "https://github.com/pratik123-coder/CommuneSphere",
-    tag: ["All", "Web"],
+    tag: ["All", "Personal"],
     description: "A SaaS Product for Community Management.",
     imageSrc: "/images/projects/commune-project.png", 
   },
   {
     title: "Aceternity UI Project",
     href: "https://example.com/project4",
-    tag: ["All", "Web"],
+    tag: ["All", "Personal"],
     description: "Testing Aceternity UI components and deploying it.",
     imageSrc: "/images/projects/music-project.png", 
   },
   {
     title: "Pratijja 2024",
     href: "https://pratijja.org/",
-    tag: ["All", "Web"],
+    tag: ["All", "College"],
     description: "Website for Pratijja Event. Registeration Forms and Dates.",
     imageSrc: "/images/projects/pratijja-project.png", 
   },
   {
     title: "Razorpay Payment SDK",
     href: "https://github.com/pratik123-coder/Razorpay",
-    tag: ["All", "Web"],
+    tag: ["All", "Personal"],
     description: "Razorpay payment gateway Backend Code.",
     imageSrc: "/images/projects/Razorpay.png", 
   },
@@ -83,13 +83,13 @@ const ProjectsSection = () => {
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
+          name="College"
+          isSelected={tag === "College"}
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
+          name="Personal"
+          isSelected={tag === "Personal"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12 justify-center items-center">
