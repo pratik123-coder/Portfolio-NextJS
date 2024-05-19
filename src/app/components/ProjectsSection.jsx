@@ -1,122 +1,137 @@
 "use client";
-import React, { useState, useRef } from "react";
 
-import ProjectTag from "./ProjectTag";
-import { motion, useInView } from "framer-motion";
-import { PinContainer } from "./ui/3d-pin";
-import Image from "next/image"; // Import Image component from next/image
+import { FaLocationArrow } from "react-icons/fa6";
 
-const projectsData = [
-  {
-    title: "Secure Chat App",
-    href: "https://secure-chat-app-1uls.onrender.com/",
-    tag: ["All", "College"],
-    description: "This is a secure chat app using Socket.io And MERN Stack.",
-    imageSrc: "/images/projects/chat-project.png", 
-  },
-  {
-    title: "Spotify Clone",
-    href: "https://spotifyclone-pratik.vercel.app/",
-    tag: ["All", "Personal"],
-    description: "Spotify Clone created using NextJS, PostgreSQL and Supabase Database.",
-    imageSrc: "/images/projects/spotify-project.png",
-  },
-  {
-    title: "CommuneSphere",
-    href: "https://github.com/pratik123-coder/CommuneSphere",
-    tag: ["All", "Personal"],
-    description: "A SaaS Product for Community Management.",
-    imageSrc: "/images/projects/commune-project.png", 
-  },
-  {
-    title: "Aceternity UI Project",
-    href: "https://example.com/project4",
-    tag: ["All", "Personal"],
-    description: "Testing Aceternity UI components and deploying it.",
-    imageSrc: "/images/projects/music-project.png", 
-  },
-  {
-    title: "Pratijja 2024",
-    href: "https://pratijja.org/",
-    tag: ["All", "College"],
-    description: "Website for Pratijja Event. Registeration Forms and Dates.",
-    imageSrc: "/images/projects/pratijja-project.png", 
-  },
-  {
-    title: "Razorpay Payment SDK",
-    href: "https://github.com/pratik123-coder/Razorpay",
-    tag: ["All", "Personal"],
-    description: "Razorpay payment gateway Backend Code.",
-    imageSrc: "/images/projects/Razorpay.png", 
-  },
-  // Add more projects as needed
-];
+
+import { PinContainer } from "./ui/Pin";
+
 
 const ProjectsSection = () => {
-  const [tag, setTag] = useState("All");
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  const handleTagChange = (newTag) => {
-    setTag(newTag);
-  };
-
-  const filteredProjects = projectsData.filter((project) =>
-    project.tag.includes(tag)
-  );
-
-  const cardVariants = {
-    initial: { y: 50, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-  };
-
+  const projects = [
+    {
+      id: 1,
+      title: "Secure Chat App",
+      des: "This is a secure chat app using diffie hellman key exchange on MERN Stack.",
+      img: "/images/projects/chat-project.png",
+      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+      link: "https://secure-chat-app-1uls.onrender.com/",
+    },
+    {
+      id: 2,
+      title: "Spotify Clone",
+      des: "A Music Streaming and Broadcasting app created using NextJS, PostgreSQL and Supabase Database.",
+      img: "/images/projects/spotify-project.png",
+      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/supa.png", "/c.svg"],
+      link: "https://spotifyclone-pratik.vercel.app",
+    },
+    {
+      id: 3,
+      title: "CommuneSphere- Community Management App",
+      des: "A SaaS Product for Community Management.",
+      img: "/images/projects/commune-project.png",
+      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+      link: "https://github.com/pratik123-coder/CommuneSphere",
+    },
+    {
+      id: 4,
+      title: "Aceternity UI Project",
+      des: "Testing Aceternity UI components and deploying it",
+      img: "/images/projects/music-project.png",
+      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+      link: "/ui.apple.com",
+    },
+    {
+      id: 5,
+      title: "Pratijja 2024",
+      des: "Website for Pratijja Event. Registration Forms and Dates.",
+      img: "/images/projects/pratijja-project.png",
+      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+      link: "https://pratijja.org/",
+    },
+    {
+      id: 6,
+      title: "Razorpay Payment SDK",
+      des: "Razorpay payment gateway Backend Code.",
+      img: "/images/projects/Razorpay.png",
+      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+      link: "https://github.com/pratik123-coder/Razorpay",
+    },
+  ];
   return (
-    <section id="projects">
-      <h1 className="md:text-5xl text-3xl lg:text-7xl p-12 font-bold text-center font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 relative z-20">
+    <div className="py-20">
+      <h1 className="md:text-5xl text-3xl lg:text-7xl pt-12 pb-8 text-center font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 relative z-20">
         My Projects
       </h1>
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-        <ProjectTag
-          onClick={handleTagChange}
-          name="All"
-          isSelected={tag === "All"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="College"
-          isSelected={tag === "College"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Personal"
-          isSelected={tag === "Personal"}
-        />
-      </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12 justify-center items-center">
-        {filteredProjects.map((project, index) => (
-          <PinContainer key={index} title={project.title} href={project.href}>
-            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
-              <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100">
-                {project.title}
-              </h3>
-              <div className="text-base !m-0 !p-0 font-normal">
-                <span className="text-slate-500">{project.description}</span>
-              </div>
-              <div className="relative w-full h-full rounded-lg mt-4 overflow-hidden">
-                <Image
-                  src={project.imageSrc}
-                  alt={project.title}
-                  height={300}
-                  width={300}
+      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
+        {projects.map((item) => (
+          <div
+            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
+            key={item.id}
+          >
+            <PinContainer
+              title="Link"
+              href={item.link}
+            >
+              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
+                <div
+                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
+                  style={{ backgroundColor: "#13162D" }}
+                >
+                  <img src="/bg.png" alt="bgimg" />
+                </div>
+                <img
+                  src={item.img}
+                  alt="cover"
+                  className="z-10 absolute bottom-0"
+                  style={{
+                    transform: "scale(1.4) rotate(5deg)",
+                  }}
                 />
               </div>
-            </div>
-          </PinContainer>
-          
+
+              <h1 className="font-bold lg:text-xl md:text-lg text-base line-clamp-1">
+                {item.title}
+              </h1>
+
+              <p
+                className="lg:text-md lg:font-normal font-light text-sm line-clamp-2"
+                style={{
+                  color: "#BEC1DD",
+                  margin: "1vh 0",
+                }}
+              >
+                {item.des}
+              </p>
+
+              <div className="flex items-center justify-between mt-7 mb-3">
+                <div className="flex items-center">
+                  {item.iconLists.map((icon, index) => (
+                    <div
+                      key={index}
+                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                      style={{
+                        transform: `translateX(-${5 * index + 2}px)`,
+                      }}
+                    >
+                      <img src={icon} alt="icon5" className="p-2" />
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex justify-center items-center">
+                  <p className="flex lg:text-lg md:text-xs text-sm text-purple">
+                    Check Live Site
+                  </p>
+                  <FaLocationArrow className="ms-3" color="#CBACF9" />
+                </div>
+              </div>
+            </PinContainer>
+          </div>
         ))}
-      </ul>
-    </section>
+      </div>
+    </div>
   );
 };
 
 export default ProjectsSection;
+
