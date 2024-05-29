@@ -21,7 +21,7 @@ const ProjectsSection = () => {
       title: "Spotify Clone",
       des: "A Music Streaming and Broadcasting app created using NextJS, PostgreSQL and Supabase Database.",
       img: "/images/projects/spotify-project.png",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/supa.png", "/c.svg"],
+      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/supa.png",],
       link: "https://spotifyclone-pratik.vercel.app",
     },
     {
